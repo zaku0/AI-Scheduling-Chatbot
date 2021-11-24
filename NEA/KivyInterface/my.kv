@@ -1,0 +1,141 @@
+#:kivy 1.11.1
+#:import utils kivy.utils
+#:import SlideTransition kivy.uix.screenmanager.SlideTransition
+
+WindowManager:
+    LoginScreen:
+        name: "login"
+    CreateUserScreen:
+        name: "create_user"
+    HomeScreen:
+        name: "home"
+
+<LoginScreen>:
+    BackgroundLayer:
+    MDLabel:
+        text: 'Chatbot Login'
+        font_name: 'md/fonts/Roboto-Light.ttf'
+        font_size: 35
+        text_size: self.size
+        theme_text_color: 'Secondary'
+        bold: True
+        markup: True
+        pos_hint: {'center_x':0.5,'center_y':0.85}
+        size_hint: (0.54,0.1)
+    BoxLayout:
+        orientation:'vertical'
+        pos_hint:{'center_x': 0.5,'center_y':1.02}
+        spacing: 15
+        padding: [35,0,35,0]
+        MDTextField:
+            hint_text: 'Username'
+            id: username
+            font_size: 17
+        MDTextField:
+            hint_text: 'Password'
+            password: True
+            font_size: 17
+            id: password
+    BoxLayout:
+        orientation:'vertical'
+        padding: [0,30,0,0]
+        pos_hint:{'center_x': 0.5,'center_y':0.8}
+        spacing: 17
+        MDFillRoundFlatButton:
+            font_name: 'md/fonts/Roboto-Light.ttf'
+            text: "Sign In"
+            size_hint_x: 0.8
+            font_size: 17
+            pos_hint: {'center_x':0.5}
+            on_release:
+                root.sign_in(username.text,password.text)
+        MDRoundFlatButton:
+            font_name: 'md/fonts/Roboto-Light.ttf'
+            text: "Create Account"
+            font_size: 17
+            size_hint_x: 0.7
+            pos_hint: {'center_x':0.5}
+            on_release:
+                app.root.transition = SlideTransition(direction='right')
+                app.root.current = "create_user"
+
+<CreateUserScreen>:
+    BackgroundGreen:
+    GridLayout:
+        rows: 3
+        MDToolbar:
+            title: "Create User"
+
+        GridLayout:
+            rows:9
+            padding: [25,20,25,20]
+            spacing: 10
+            MDTextField:
+                hint_text: 'Username'
+                font_size: 15
+                id: username
+            MDTextField:
+                hint_text: 'Password'
+                font_size: 15
+                id: password
+            MDTextField:
+                hint_text: 'Security Question'
+                font_size: 15
+                id: securityquestion
+            MDTextField:
+                hint_text: 'Security Answer'
+                font_size: 15
+                id: securityanswer
+            MDTextField:
+                hint_text: 'First Name'
+                font_size: 15
+                id: firstname
+            MDTextField:
+                hint_text: 'Age'
+                font_size: 15
+                input_filter: 'int'
+                id: age
+            MDTextField:
+                hint_text: 'Commute TFL Line'
+                font_size: 15
+                id: commutepath
+            BoxLayout:
+                padding: [0,5,50,0]
+                MDLabel:
+                    text: 'Agree to terms and conditions'
+                    font_name: 'md/fonts/Roboto-Light.ttf'
+                    font_size: 16
+                    pos_hint:{'center_x': 0.1,'center_y':0.8}
+                    text_size: self.size
+                    theme_text_color: 'Secondary'
+                    markup: True
+                MDCheckbox:
+                    id: TCs
+                    size_hint: None, None
+                    size: "20dp", "20dp"
+                    pos_hint:{'center_x': 0.1,'center_y':0.8}
+
+        BoxLayout:
+            spacing: 13
+            padding: [15,0,15,0]
+            MDRaisedButton:
+                pos_hint: {'center_x':0.7,'center_y':0.15}
+                text: "Create Account"
+                elevation_normal: 2
+                opposite_colors: True
+                font_size: 17
+                on_release:
+                    root.validate(TCs.active, username.text, password.text, securityquestion.text, securityanswer.text, firstname.text, age.text, commutepath.text)
+
+            MDRectangleFlatButton:
+                pos_hint: {'center_x':0.8,'center_y':0.15}
+                text: "Cancel"
+                font_size: 17
+                on_release:
+                    app.root.transition = SlideTransition(direction='left')
+                    app.root.current = "login"
+
+
+<HomeScreen>:
+    MDLabel:
+        text:'YOURE IN'

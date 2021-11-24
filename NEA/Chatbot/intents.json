@@ -1,0 +1,251 @@
+{"intents": [
+    {
+        "tag": "greeting_response",
+        "patterns": [
+            "How are you feeling",
+            "You alright?",
+            "How are you doing?",
+            "Are you doing well?",
+            "How are you",
+            "How about you?"
+        ],
+        "responses": [
+            "I'm good",
+            "I'm alright I guess",
+            "I'm feeling pretty good",
+            "Yeah I'm not doing too bad thanks"
+        ],
+        "context": [
+            "greeting"
+        ]
+    },
+    {
+        "tag": "greeting",
+        "patterns": [
+            "Hi",
+            "hi how are you",
+            "Is anyone there?",
+            "Hey",
+            "Hola",
+            "Hello",
+            "Good day",
+            "How are you doing",
+            "Good Morning",
+            "Hi"
+        ],
+        "responses": [
+            "Hello, thanks for asking",
+            "Hey what's up?",
+            "Hi, how are you doing?",
+            "Hey"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "feeling",
+        "patterns": [
+            "how are you?",
+            "how r u doing?",
+            "are you ok?"
+        ],
+        "responses": [
+            "I'm doing pretty good",
+            "alright thanks",
+            "a bit tired tbh",
+            "I'm good"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "goodbye",
+        "patterns": [
+            "Bye",
+            "See you later",
+            "Goodbye",
+            "bye have a nice day",
+            "ttyl",
+            "cya"
+        ],
+        "responses": [
+            "See you!",
+            "Have a nice day",
+            "Good luck at school",
+            "Talk to you later"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "thanks",
+        "patterns": [
+            "Thanks",
+            "Thank you",
+            "That's helpful",
+            "Awesome, thanks",
+            "Thanks for helping me",
+            "Thx",
+            "ty",
+            "You're a lifesaver"
+        ],
+        "responses": [
+            "It's alright",
+            "You're welcome",
+            "No problem",
+            "np"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "noanswer",
+        "patterns": [],
+        "responses": [
+            "Sorry, can't understand you",
+            "Erm are you there?",
+            "Don't really understand what that means...",
+            "Tell me what that means?",
+            "Please give me more info",
+            "Not sure I understand"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "options",
+        "patterns": [
+            "How you could help me?",
+            "What can you do?",
+            "What do u do",
+            "What help you provide?",
+            "How you can be helpful?",
+            "What things can you help me with?"
+        ],
+        "responses": [
+            "I mean I help you manage your daily life, so u can use me as a homework diary or reminder I guess for any activities you do. I can also help w weather and lunch timetable :)",
+            "I can help u with remembering what goes on in ur daily life: storing homework, extra curricular, oh I can also get the weather and lunch menu too!"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "homework_confirm",
+        "patterns": [
+            "12/4/19",
+            "Friday",
+            "Thursday",
+            "Wednesday",
+            "Tuesday",
+            "Monday",
+            "This Thursday",
+            "Next Tuesday"
+        ],
+        "responses": [
+            "I've added it, I'll remind you when its due soon!",
+            "Thanks its all set",
+            "Nice, I've recorded it!"
+        ],
+        "context": [
+            ""
+        ]
+    },
+    {
+        "tag": "homework_content",
+        "patterns": [
+            "write an essay",
+            "1 2 3 4 5 6 7 8 9 10",
+            "Questions",
+            "Test",
+            "Exercise"
+        ],
+        "responses": [
+            "Due date?",
+            "Ok, when's it due for?"
+        ],
+        "context": [
+            "homework_confirm"
+        ]
+    },
+    {
+        "tag": "homework_subject",
+        "patterns": [
+            "Greek",
+            "Latin",
+            "German",
+            "Chinese",
+            "French",
+            "Spanish",
+            "Economics",
+            "Politics",
+            "Drama",
+            "Art",
+            "Music",
+            "PE",
+            "DT",
+            "CS",
+            "Computer Science",
+            "RPE",
+            "History",
+            "Geography",
+            "Physics",
+            "Chemistry",
+            "Biology",
+            "Science",
+            "English",
+            "Maths"
+        ],
+        "responses": [
+            "Let me know what the homework is pls",
+            "What was the homework?",
+            "Homework details pls",
+            "Okay! What was set?"
+        ],
+        "context": [
+            "homework_content"
+        ]
+    },
+    {
+        "tag": "homework",
+        "patterns": [
+            "add homework",
+            "Can you store my homework?",
+            "add hw",
+            "new homework",
+            "I want to add some homework"
+        ],
+        "responses": [
+            "Subject?",
+            "Okay, which subject?",
+            "Oke, subject?",
+            "Cool, which subject?"
+        ],
+        "context": [
+            "homework_suject"
+        ]
+    },
+    {
+        "tag": "task",
+        "patterns": [
+            "add task",
+            "add extra curricular",
+            "Can you remind me for my meeting coming up?",
+            "remind of this task please",
+            "new task",
+            "I want to add a task"
+        ],
+        "responses": [
+            "sure can you give me its name specific contents and when it is, oh also is it reoccuring everyweek?",
+            "name, details, date & time and let me know if it's a weekly thing pls"
+        ],
+        "context": [
+            ""
+        ]
+    }
+]}
